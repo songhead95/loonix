@@ -37,7 +37,7 @@ public class loonix{
 			term.setPrompt(prompt);		
 			log("command entered: " + rawCommand);
 			if (commands.containsKey(command)) {
-			//commands.get(command).run(inpass, outpass, errpass, rawCommand, Argv);
+			commands.get(command).run(inpass, outpass, errpass, rawCommand, Argv);
 			} else {
 				term.print(command + ": command not found\n");
 			}

@@ -27,8 +27,6 @@ public class filesystem {
 		String Name = getName(Path);
 		String NewDir = getParentDir(NewPath + "/");
 		String NewName = getName(NewPath.substring(0,NewPath.length()-2));
-
-		
 		makeDir(NewDir + NewName);
 		String Swap;
 		Set <String> files = fsIndex.keySet();
@@ -43,6 +41,7 @@ public class filesystem {
 				}
 			}
 			fsIndex.put(NewPath, fsIndex.get(Path));
+			fsIndex.put(getParentDir(NewPath)+"$", fsIndex.get(getParentDir(NewPath)+"$") +" "+ NewName+"/");
 		}
 		return false;
 	}
