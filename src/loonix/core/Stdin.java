@@ -27,8 +27,9 @@ public class Stdin {
 		if(ptype.equals("file")) {
 			String file = loonix.fs.fsIndex.get(loonix.resolvePath(pipe));
 			if(readBuffer >= file.length() )
-				readBuffer=0;
-			x = file.charAt(readBuffer++);
+				x = 0;
+			else
+				x = file.charAt(readBuffer++);
 		}
 		return x;
 	}
