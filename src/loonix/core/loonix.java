@@ -27,23 +27,36 @@ public class loonix{
 
 		while (loggedIn != 0){
 			rawCommand = term.getInput();
-			Argv = rawCommand.split(" ");
-			Stdin inpass = new Stdin("/dev/stdin");
-			Stdout outpass = new Stdout("/dev/stdout");
-			Stderr errpass = new Stderr("/dev/stderr");
-			
-			command = Argv[0];
-
-			term.setPrompt(prompt);		
-			log("command entered: " + rawCommand);
-			if (commands.containsKey(command)) {
-			commands.get(command).run(inpass, outpass, errpass, rawCommand, Argv);
-			} else {
-				term.print(command + ": command not found\n");
-			}
-
+			paseCommand();
 		}
 	}    
+
+	private static void paseCommand() {
+		Stdin inpass = new Stdin("/dev/stdin");
+		Stdout outpass = new Stdout("/dev/stdout");
+		Stderr errpass = new Stderr("/dev/stderr");
+		if(rawCommand.contains(" > ")) {
+			outpass = new Stdout(rawCommand.split(" > ")[1]);
+			rawCommand = rawCommand.split(" > ")[0];
+		}
+		if(rawCommand.contains(" < ")) {
+			inpass = new Stdin(rawCommand.split(" < ")[1]);
+			rawCommand = rawCommand.split(" < ")[0];
+		}
+		if(rawCommand.contains(" 2> ")) {
+			errpass = new Stderr(rawCommand.split(" 2> ")[1]);
+			rawCommand = rawCommand.split(" 2> ")[0];
+		}
+		Argv = rawCommand.split(" ");
+		command = Argv[0];
+		term.setPrompt(prompt);		
+		log("command entered: " + rawCommand);
+		if (commands.containsKey(command)) {
+		commands.get(command).run(inpass, outpass, errpass, rawCommand, Argv);
+		} else {
+			term.print(command + ": command not found\n");
+		}		
+	}
 
 	public static void buildCommands() {
 		commands.put("ls", new Ls());

@@ -11,7 +11,7 @@ public class Bfi implements Command {
 			if (loonix.fs.fileExists(Argv[1])) {
 				loonix.mybfi.init(3000);
 				loonix.mybfi.setProgram(loonix.fs.fsIndex.get(Argv[1]));
-				loonix.mybfi.start();
+				loonix.mybfi.start(in, out, err);
 			} else {
 				out.print("error: file not found\n");
 			}

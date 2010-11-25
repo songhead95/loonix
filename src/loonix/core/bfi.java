@@ -195,19 +195,19 @@ public class bfi {
 		case '*':
 			if( cell[mp]==13 || cell[mp]==10){
 				err.print("\n");
-			} else {err.print("");
+			} else {err.print(""+cell[mp]);
 			}
 		case '.':
 			if( cell[mp]==13 || cell[mp]==10 ) {
 				// Printing out char 13 or 10 causes an exception (don't know why)
-				ps.println( "" );
+				out.print( "" );
 			} else {
-				ps.print( (char)cell[mp] );
+				out.print( ""+(char)cell[mp] );
 			}
 			break;
 		case ',':
 			try {
-				cell[mp] = is.read();
+				cell[mp] = in.read();
 			} catch( Exception e ) {
 				return false;
 			}
@@ -280,9 +280,7 @@ public class bfi {
 		start(0);
 	}
 	
-	public void start() {
-		start( 0 );
-	}
+
 
 	/** This method goes through the whole code starting at a certain point in the code **/
 
@@ -323,7 +321,7 @@ public class bfi {
 
 		bfi bfi = new bfi();
 		bfi.setProgram( args[0] );
-		bfi.start();
+		bfi.start(0);
 
 		System.out.println();
 

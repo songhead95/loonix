@@ -10,18 +10,10 @@ public class Ls implements Command {
 			if (Argv[1].charAt(Argv[1].length() - 1) != '/')
 				Argv[1] = Argv[1] + "/";
 			Argv[1] = loonix.resolvePath(Argv[1]);
-			out
-					.print(loonix.fs.fsIndex.get(Argv[1] + '$').substring(2)); // the
-																				// listdir
-																				// function
-																				// wasn't
-																				// working
-																				// properly
-																				// here
+			out.print(loonix.fs.fsIndex.get(Argv[1] + '$').substring(2) + "\n");
 		} else {
-			out.print(loonix.fs.listDir(loonix.PWD)); // but it was here
+			out.print(loonix.fs.listDir(loonix.PWD) + "\n");
 		}
-		out.print("\n");
 	}
 
 }

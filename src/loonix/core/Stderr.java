@@ -3,6 +3,7 @@ package loonix.core;
 public class Stderr {
 	String pipe = "";
 	String ptype= "";
+	String fwrite = "";
 	public Stderr(String file) {
 		pipe=file;
 		if(pipe.equals("/dev/stderr") || pipe.equals("/dev/stdout")) {
