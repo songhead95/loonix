@@ -15,7 +15,14 @@ public class Stderr {
 		}
 
 	}
-	
+	public void printc(String out) {
+		if(ptype.equals("null")); //if the file is /dev/null, then do nothing
+		if(ptype.equals("normal"))loonix.term.print(out); //
+		if(ptype.equals("file")) {
+			fwrite=loonix.fs.fsIndex.get(loonix.resolvePath(pipe));
+			loonix.fs.fsIndex.put(loonix.resolvePath(pipe), fwrite + out);
+		}
+	}
 	public void print(String out) {
 		if(ptype.equals("null")); //if the file is /dev/null, then do nothing
 		if(ptype.equals("normal"))loonix.term.print(out); //

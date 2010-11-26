@@ -194,15 +194,15 @@ public class bfi {
 			break;
 		case '*':
 			if( cell[mp]==13 || cell[mp]==10){
-				err.print("\n");
-			} else {err.print(""+cell[mp]);
+				err.printc("");
+			} else {err.printc(""+cell[mp]);
 			}
 		case '.':
 			if( cell[mp]==13 || cell[mp]==10 ) {
 				// Printing out char 13 or 10 causes an exception (don't know why)
 				out.print( "" );
 			} else {
-				out.print( ""+(char)cell[mp] );
+				out.printc( (char)cell[mp] );
 			}
 			break;
 		case ',':
@@ -287,7 +287,8 @@ public class bfi {
 	public void start( int off ) {
 
 		if( interpret(off) ) {
-			while( interpret() ) {}
+			while( interpret() );
+			out.printc(-1);
 		}
 
 		try {

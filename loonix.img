@@ -1,9 +1,9 @@
 /home/documents/$
 _ readme.txt dummy.txt dummy2.txt 
-/dev/stdout
- 
 /$
 _ dev/ home/ root/ bin/ 
+/dev/stdout
+ 
 /bin/helloworld
 >+++++++++[<++++++++>-]<.>+++++++[<++++>-]<+.+++++++..+++.[-]>++++++++[<++++>-] <.>+++++++++++[<++++++++>-]<-.--------.+++.------.--------.[-]>++++++++[<++++>- ]<+.[-]++++++++++.
 /home/documents/dummy2.txt
@@ -12,16 +12,16 @@ In soviet russia, world greets you!(newline)
 _ 
 /home/documents/readme.txt
 You read me!(newline)
-/bin/cat
-+[,.]
-/home/$
-_ documents/ 
-/dev/$
-_ hda1 memory random stdin stdout stderr zero 
 /home/documents/dummy.txt
 Hello World!(newline)
+/dev/$
+_ hda1 memory random stdin stdout stderr zero 
+/home/$
+_ documents/ 
 /dev/stderr
  
+/bin/cat2
++[,.---------------------------------]
 /dev/stdin
  
 /dev/random
@@ -34,7 +34,7 @@ primitive
  
 /root/$
 _ documents/ 
-/bin/$
-_ helloworld  cat 
 /dev/memory
  
+/bin/$
+_ helloworld  cat2 

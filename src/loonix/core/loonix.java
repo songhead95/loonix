@@ -49,6 +49,7 @@ public class loonix{
 		}
 		Argv = rawCommand.split(" ");
 		command = Argv[0];
+		if(command.equals("")) command = "null";
 		term.setPrompt(prompt);		
 		log("command entered: " + rawCommand);
 		if (commands.containsKey(command)) {
@@ -85,7 +86,7 @@ public class loonix{
 		commands.put("cp", new CP());
 		commands.put("cpdir", new cpDir());
 		commands.put("mvdir", new Mvdir());
-		commands.put("", new Print(""));
+		commands.put("null", new Print(""));
 	}
 	
 	public static void importCommands() {
