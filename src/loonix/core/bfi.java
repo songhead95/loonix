@@ -197,6 +197,7 @@ public class bfi {
 				out.print("");
 			} else {err.printc(cell[mp]);
 			}
+			break;
 		case '.':
 			if( cell[mp]==13 || cell[mp]==10 ) {
 				// Printing out char 13 or 10 causes an exception (don't know why)
